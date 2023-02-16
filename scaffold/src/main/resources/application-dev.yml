@@ -1,0 +1,39 @@
+# 开发环境配置文件
+
+server:
+  port: 8001     # Springboot占用端口
+
+spring:
+  ###数据源相关配置###
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver     # 数据库驱动
+      url: jdbc:mysql://localhost:3306/数据库名?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false     # 数据库链接
+      username: root     # 数据库账号
+      password: 123456     # 数据库密码
+  #### redis相关配置 ####
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+    timeout: 1800000
+    lettuce:
+      pool:
+        max-active: 20
+        max-wait: -1
+        #最大阻塞等待时间(负数表示没限制)
+        max-idle: 5
+        min-idle: 0
+
+###  token生成密钥(开发环境下)  ###
+token:
+  secret: Dev:YOUR SECRET + 64 BIT > OVJPIDSFWEcvoOIDF1-232''F]WE=F23=-4VXCNONSFIOEIWI023
+
+#########   Mybatis-Plus相关配置    #########
+#扫描xml文件的位置
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    ##日志输出方式
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
