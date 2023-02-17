@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 /**
  * @author 记住吾名梦寒
  * @version 1.0
- * @date 2023/2/16 15:00
+ * @date 2023/2/16 
  * @description  专门用于给统一返回结果类 Result 作二次封装的
  */
 @Data

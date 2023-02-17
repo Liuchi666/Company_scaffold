@@ -3,7 +3,7 @@ package com.wanlun.base.exception;
 /**
  * @author 记住吾名梦寒
  * @version 1.0
- * @date 2023/2/16 15:00
+ * @date 2023/2/16 
  * @description  用户访问某一接口超出限制抛出的异常
  */
 public class AccessLimitException extends ServiceException{

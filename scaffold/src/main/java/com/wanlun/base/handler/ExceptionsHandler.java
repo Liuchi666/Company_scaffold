@@ -18,8 +18,8 @@ import org.springframework.web.servlet.NoHandlerFoundException;
  * 全局异常接管
  *
  * @author 记住吾名梦寒
- * @update 2023/2/16 15:00
- * @since 2023/2/16 15:00
+ * @update 2023/2/16 
+ * @since 2023/2/16 
  */
 @RestControllerAdvice
 public class ExceptionsHandler {

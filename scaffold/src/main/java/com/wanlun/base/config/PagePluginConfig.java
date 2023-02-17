@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * @author 记住吾名梦寒
  * @version 1.0
- * @date 2023/2/16 15:00
+ * @date 2023/2/16 
  * @description  MP分页插件配置类
  */
 @Configuration

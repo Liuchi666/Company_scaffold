@@ -23,7 +23,7 @@ import java.time.Duration;
  * redis配置
  *
  * @author 记住吾名梦寒
- * @date 2023/2/16 15:00
+ * @date 2023/2/16 
  */
 @Configuration
 @EnableCaching

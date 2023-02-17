@@ -9,8 +9,8 @@ import java.util.Map;
  * Token服务
  *
  * @author: 记住吾名梦寒
- * @since: 2023/2/16 15:00
- * @update: 2023/2/16 15:00
+ * @since: 2023/2/16 
+ * @update: 2023/2/16 
  **/
 public interface TokenService {
     String generate(Object subject, long id);

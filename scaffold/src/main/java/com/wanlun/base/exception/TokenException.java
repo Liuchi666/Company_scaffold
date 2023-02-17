@@ -8,7 +8,7 @@ package com.wanlun.base.exception;
  *        AuthException是token格式解析正确，但是无法取出token载荷中保存的信息时抛出的异常
  *
  * @author 记住吾名梦寒
- * @since 22023/2/16 15:00
+ * @since 22023/2/16 
  */
 public class TokenException extends ServiceException {
     public TokenException() {
