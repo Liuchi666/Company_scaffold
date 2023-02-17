@@ -88,6 +88,14 @@
             <optional>true</optional>
         </dependency>
 
+        <!-- HuTool工具包 -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.8.12</version>
+        </dependency>
+
+
         <!-- JWT -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>

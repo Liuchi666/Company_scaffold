@@ -6,7 +6,7 @@ package com.wanlun.base.exception;
  *          TokenException是解析token格式是否正确时抛出的异常
  *          AuthException是token格式解析正确，但是无法取出token载荷中保存的信息时抛出的异常
  * @author 记住吾名梦寒
- * @since 2023/2/16 15:00
+ * @since 2023/2/16 
  */
 public class AuthException extends ServiceException {
     public AuthException() {

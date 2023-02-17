@@ -11,8 +11,8 @@ import java.lang.annotation.Target;
  *      配合 AuthMethodArgumentResolver使用（在该类中定义了接口参数类型、认证流程等细节）
  *
  * @author 记住吾名梦寒
- * @update 2023/2/16 15:00
- * @since 2023/2/16 15:00
+ * @update 2023/2/16 
+ * @since 2023/2/16 
  */
 @Target({ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)

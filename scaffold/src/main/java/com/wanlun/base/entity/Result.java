@@ -5,8 +5,8 @@ import lombok.Getter;
 /**
  *  统一返回结果实体类
  * @author 记住吾名梦寒
- * @update 2023/2/16 15:00
- * @since 2023/2/16 15:00
+ * @update 2023/2/16 
+ * @since 2023/2/16 
  */
 @Getter
 public class Result {

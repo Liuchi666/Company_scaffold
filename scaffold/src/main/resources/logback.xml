@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--详细介绍使用：https://icode.blog.csdn.net/article/details/88874162-->
+<!--debug="true" : 打印 logback 内部状态（默认当 logback 运行出错时才会打印内部状态 ）, 配置该属性后打印条件如下（同时满足）：
+    1、找到配置文件 2、配置文件是一个格式正确的xml文件 也可编程实现打印内部状态, 例如： LoggerContext lc = (LoggerContext)
+    LoggerFactory.getILoggerFactory(); StatusPrinter.print(lc); -->
+<!-- scan="true" ： 自动扫描该配置文件，若有修改则重新加载该配置文件 -->
+<!-- scanPeriod="30 seconds" : 配置自动扫面时间间隔（单位可以是：milliseconds, seconds, minutes
+    or hours，默认为：milliseconds）， 默认为1分钟，scan="true"时该配置才会生效 -->
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+	<!-- 日志存放路径 -->
+	<property name="log.path" value="D:\Company_Project_Log" />
+	<!-- 日志输出格式 -->
+	<property name="log.pattern" value="%boldGreen(%date{yyyy-MM-dd HH:mm:ss}) %highlight(%-5level) %red([%thread]) %boldMagenta(%logger{50}) %cyan(%msg%n)" />
+
+	<!-- 控制台输出 -->
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>${log.pattern}</pattern>
+		</encoder>
+	</appender>
+
+	<!-- 系统日志输出 -->
+	<appender name="file_info" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.path}/info.log</file>
+		<!-- 循环政策：基于时间创建日志文件 -->
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- 日志文件名格式 -->
+			<fileNamePattern>${log.path}/info.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<!-- 日志最大的历史 60天 -->
+			<maxHistory>60</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${log.pattern}</pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<!-- 过滤的级别 -->
+			<level>INFO</level>
+			<!-- 匹配时的操作：接收（记录） -->
+			<onMatch>ACCEPT</onMatch>
+			<!-- 不匹配时的操作：拒绝（不记录） -->
+			<onMismatch>DENY</onMismatch>
+		</filter>
+	</appender>
+
+	<appender name="file_error" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.path}/error.log</file>
+		<!-- 循环政策：基于时间创建日志文件 -->
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- 日志文件名格式 -->
+			<fileNamePattern>${log.path}/error.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<!-- 日志最大的历史 60天 -->
+			<maxHistory>60</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${log.pattern}</pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<!-- 过滤的级别 -->
+			<level>ERROR</level>
+			<!-- 匹配时的操作：接收（记录） -->
+			<onMatch>ACCEPT</onMatch>
+			<!-- 不匹配时的操作：拒绝（不记录） -->
+			<onMismatch>DENY</onMismatch>
+		</filter>
+	</appender>
+
+	<!-- 系统模块日志级别控制  -->
+	<logger name="cn.yzlsoft.project" level="info" />
+	<!-- Spring日志级别控制  -->
+	<logger name="org.springframework" level="warn" />
+
+	<root level="info">
+		<appender-ref ref="console" />
+	</root>
+
+	<!--系统操作日志-->
+	<root level="info">
+		<appender-ref ref="file_info" />
+		<appender-ref ref="file_error" />
+	</root>
+</configuration>

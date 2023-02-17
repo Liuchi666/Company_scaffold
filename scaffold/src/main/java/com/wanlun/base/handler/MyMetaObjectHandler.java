@@ -11,8 +11,8 @@ import java.util.Date;
  * MybatisPlus字段自动填充配置
  *
  * @author 记住吾名梦寒
- * @update 2023/2/16 15:00
- * @since 2023/2/16 15:00
+ * @update 2023/2/16 
+ * @since 2023/2/16 
  */
 @Component
 public class MyMetaObjectHandler implements MetaObjectHandler {
