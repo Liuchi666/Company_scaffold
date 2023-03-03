@@ -31,6 +31,8 @@
         <jjwt-jackson.version>0.10.5</jjwt-jackson.version>
         <commons-io.version>2.6</commons-io.version>
         <commons-lang.version>2.6</commons-lang.version>
+        <hutool.version>5.8.12</hutool.version>
+        <okhttp3.version>3.12.13</okhttp3.version>
     </properties>
 
     <dependencies>
@@ -92,7 +94,14 @@
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
-            <version>5.8.12</version>
+            <version>${hutool.version}</version>
+        </dependency>
+
+        <!--okhttp3-->
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>${okhttp3.version}</version>
         </dependency>
 
 
